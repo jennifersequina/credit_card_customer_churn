@@ -19,7 +19,7 @@ This section explains the procedures in completing this project.
     - BankChurners.csv - most of the columns are useful in predicting churners, but we need to ignore the last two columns for naive bayes.
     - pre_processing.py - in this python file, I created a function to pre-process the datasets. I analyzed all the columns using value_counts and histogram to see the distribution, and decide which approach to use in converting columns.
       - First, I imputed the 'Unknown' values in the columns Education_Level, Income_Category & Marital_Status with the top value count from the datasets.
-      - Second, I converted the most of the columns with categorical values to numerical values by creating new columns conditional on the other columns.
+      - Second, I converted the most of the columns with categorical values to numerical values by creating new columns using conditions & choices function.
       - Lastly, I dropped the unnecessary columns, rename the client_id column and set it to index. It's not necessary in the splitting of datasets for train and test, but it will be useful for checking the data later on.
    
 2. Building a machine learning model suitable for the objective. For classification, there's a lot of machine learning models to choose from.
@@ -36,7 +36,7 @@ This section explains the procedures in completing this project.
      
    - After getting the best results, I checked the top important features affecting the churning prediction. This information could be useful in further analyzing the data and improving the model.
 
-NOTE: I used the grid_search multiple times until I get the highest recall score. This score is important in order to know the effectiveness of the machine learning model for this use case, as I want the model to detect as many churns as possible.
+NOTE: I used the grid_search multiple times until I get the highest recall score. I value recall score more than accuracy for this use case for two reasons: one, I can surely get high accuracy as the data is imbalance with only 16% churned; two, recall score is important for me to know whether the model can detect as many churns as possible.
 
 
 ### Usage:
